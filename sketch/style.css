@@ -13,13 +13,17 @@ body {
   background-color: #fff;
   box-shadow: 0 1px 5px 0 rgba(45, 62, 80, 0.12);
   position: relative;
+  transition: all 0.5s;
+}
+.card:hover {
+  background: #eee;
 }
 .card h2 {
   display: inline;
   padding-left: 10px;
 }
 .card i {
-  color: #bada55;
+  color: rgba(114, 57, 129, 1);
 }
 button {
   width: 10%;
@@ -29,8 +33,16 @@ button {
   background: #f5f8fa;
   text-transform: uppercase;
   border-radius: 0.1875rem;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.5s;
 }
 button a {
   text-decoration: none;
   color: #444;
+}
+button:hover {
+  background: rgba(114, 57, 129, 0.7);
+}
+button:hover a {
+  color: #fff;
 }
