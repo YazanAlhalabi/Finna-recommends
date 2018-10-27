@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {
+  background: #f5f8fa;
+  font-family: 'Open Sans', sans-serif;
+}
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin-bottom: 15px;
+  border-radius: 0.1875rem;
+  background-color: #fff;
+  box-shadow: 0 1px 5px 0 rgba(45, 62, 80, 0.12);
+  position: relative;
+}
+.card h2 {
+  display: inline;
+  padding-left: 10px;
+}
+.card i {
+  color: #bada55;
+}
+button {
+  width: 10%;
+  margin-left: auto;
+  margin-top: 15px;
+  padding: 0.3rem 0.1rem;
+  background: #f5f8fa;
+  text-transform: uppercase;
+  border-radius: 0.1875rem;
+}
+button a {
+  text-decoration: none;
+  color: #444;
+}
