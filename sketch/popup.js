@@ -1,6 +1,3 @@
-// Wordnik API key:
-// let api_key = '/?api_key=48dd829661f515d5abc0d03197a00582e888cc7da2484d5c7'
-
 function setup() {
   noCanvas();
   let bgpage = chrome.extension.getBackgroundPage();
@@ -9,7 +6,7 @@ function setup() {
   const data = {
     project_id: 'yso-en',
     text: word,
-    limit: 3,
+    limit: 1,
   };
 
   $.ajax({
@@ -20,11 +17,9 @@ function setup() {
   });
 
   function finished(response) {
-    console.log(response);
     response.results.map(key => {
       let encoded = encodeURI(key.label);
-      console.log(encoded);
-      let url = `https://api.finna.fi/api/v1/search?lookfor=${encoded}&type=Subject&field[]=id&field[]=title&field[]=nonPresenterAuthors&filter[]=language%3Aeng&sort=relevance%2Cid%20asc&page=1&limit=2&prettyPrint=false&lng=en-gb`;
+      let url = `https://api.finna.fi/api/v1/search?lookfor=${encoded}&type=Subject&field[]=id&field[]=title&field[]=nonPresenterAuthors&filter[]=language%3Aeng&sort=relevance%2Cid%20asc&page=1&limit=3&prettyPrint=false&lng=en-gb`;
 
       url = url.replace(/\s+/g, '');
       loadJSON(url, gotData);
@@ -34,7 +29,6 @@ function setup() {
       }
 
       function createP(word) {
-        console.log(word.records);
         word.records.map(key => {
           interface(key);
         });
