@@ -2,7 +2,7 @@
 
 ### 1. Introduction
 
-Finna Recommends Extenstion aims to improve accessibility of information for everyone.
+Finna Recommends Extension aims to improve accessibility of information for everyone.
 
 ### 2. Features
 
@@ -17,7 +17,7 @@ Finna Recommends Extenstion aims to improve accessibility of information for eve
 2. enable developer mode
 3. click on load unpacked
 4. select the folder
-5. the extenstion will be added to the extentions bar
+5. the extension will be added to the extentions bar
 
 #### 3.2 Use
 
