@@ -4,6 +4,9 @@ body {
   background: #f5f8fa;
   font-family: 'Open Sans', sans-serif;
 }
+.parent h1{
+color:rgba(114, 57, 129, 1);
+}
 .card {
   display: flex;
   flex-direction: column;
