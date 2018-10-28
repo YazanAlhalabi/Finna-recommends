@@ -1,5 +1,10 @@
 # Finna Recommends
 
+## contributors to the project
+Yazan Alhalabi  https://github.com/YazanAlhalabi
+Samuel Akangbe  https://github.com/sseun43
+Steven Nebo   https://github.com/srcnebo
+
 ### 1. Introduction
 
 Finna Recommends Extension aims to improve accessibility of information for everyone.
