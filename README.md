@@ -1,9 +1,9 @@
 # Finna Recommends
 
 ## contributors to the project
-Yazan Alhalabi  https://github.com/YazanAlhalabi
-Samuel Akangbe  https://github.com/sseun43
-Steven Nebo   https://github.com/srcnebo
+- Yazan Alhalabi  https://github.com/YazanAlhalabi
+- Samuel Akangbe  https://github.com/sseun43
+- Steven Nebo   https://github.com/srcnebo
 
 ### 1. Introduction
 
