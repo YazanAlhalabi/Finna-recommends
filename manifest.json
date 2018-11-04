@@ -1,7 +1,7 @@
 {
    "manifest_version": 2,
-   "name": "Word Lookup",
-   "version": "0.1",
+   "name": "Finna Recommends",
+   "version": "1",
    "content_scripts": [
       {
          "matches": [
@@ -18,8 +18,8 @@
       ]
    },
    "browser_action": {
-      "default_icon": "fi.png",
+      "default_icon": "finna.png",
       "default_popup": "sketch/index.html",
-      "default_title": "Lookup a definition!"
+      "default_title": "Find Recommendations"
    }
 }
