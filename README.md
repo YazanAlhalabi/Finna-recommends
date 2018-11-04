@@ -1,22 +1,23 @@
 # Finna Recommends
 
 ## contributors to the project
-- Yazan Alhalabi  https://github.com/YazanAlhalabi
-- Samuel Akangbe  https://github.com/sseun43
-- Steven Nebo   https://github.com/srcnebo
 
-### 1. Introduction
+- Yazan Alhalabi https://github.com/YazanAlhalabi
+- Samuel Akangbe https://github.com/sseun43
+- Steven Nebo https://github.com/srcnebo
+
+### Introduction
 
 Finna Recommends Extension aims to improve accessibility of information for everyone.
 
-### 2. Features
+### Features
 
 - Get book recommendations based on selected text
 - Direct link to the chosen book
 
-### 3. How to use
+### How to use
 
-#### 3.1 Installation
+#### Installation
 
 1. type in the chrome url bar: chrome://extensions
 2. enable developer mode
@@ -24,7 +25,7 @@ Finna Recommends Extension aims to improve accessibility of information for ever
 4. select the folder
 5. the extension will be added to the extentions bar
 
-#### 3.2 Use
+#### Use
 
 1. Open any webpage of your interest
 2. Select a block of text
@@ -32,6 +33,10 @@ Finna Recommends Extension aims to improve accessibility of information for ever
 4. You should get a list of recommended books
 5. Click "visit"
 
-### 4. Demo
+### Demo
 
-![Demo video](finna-demo.gif)
+![Demo video](https://media.giphy.com/media/5zoCOSfYg10MqlWnmT/giphy.gif)
+
+### License
+
+Finna recommends is [MIT licensed](https://choosealicense.com/licenses/mit/).
