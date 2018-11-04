@@ -35,7 +35,7 @@ Finna Recommends Extension aims to improve accessibility of information for ever
 
 ### Demo
 
-![Demo video](finna-demo.gif)
+![Demo video](https://imgur.com/a/tfXGkME)
 
 ### License
 
