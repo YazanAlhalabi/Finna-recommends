@@ -8,7 +8,7 @@
 
 ### Introduction
 
-Finna Recommends Extension aims to improve accessibility of information for everyone.
+Finna Recommends is a chrome browser extension that improves accessibility of information for everyone. Get book recommendations based on your selected text with a single click.
 
 ### Features
 
