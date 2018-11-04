@@ -39,4 +39,4 @@ Finna Recommends Extension aims to improve accessibility of information for ever
 
 ### License
 
-Finna recommends is is [MIT licensed](https://choosealicense.com/licenses/mit/).
+Finna recommends is [MIT licensed](https://choosealicense.com/licenses/mit/).
