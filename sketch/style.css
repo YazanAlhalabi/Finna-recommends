@@ -4,15 +4,38 @@ body {
   background: #f5f8fa;
   font-family: 'Open Sans', sans-serif;
 }
+.parent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 .parent h1 {
   color: rgba(114, 57, 129, 1);
 }
 .parent p span {
   color: #444;
-  border: 1px solid rgba(114, 57, 129, 1);
+  border: 2px solid rgba(114, 57, 129, 1);
   padding: 0.2rem 0.5rem;
   margin-left: 10px;
-  border-radius: 7px;
+  border-radius: 0.1875rem;
+}
+.show-more {
+  align-self: flex-end;
+  padding: 5px 10px;
+  border: 3px solid rgba(114, 57, 129, 1);
+  text-decoration: none;
+  color: rgba(114, 57, 129, 1);
+  transition: all 0.5s;
+  order: 2;
+}
+.show-more::before {
+  content: '\2192';
+  display: inline-block;
+  margin-right: 10px;
+}
+.show-more:hover {
+  background: rgba(114, 57, 129, 1);
+  color: #fff;
 }
 .card {
   display: flex;
@@ -24,6 +47,7 @@ body {
   box-shadow: 0 1px 5px 0 rgba(45, 62, 80, 0.12);
   position: relative;
   transition: all 0.5s;
+  order: 1;
 }
 .card:hover {
   background: #eee;
