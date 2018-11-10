@@ -1,10 +1,8 @@
+window.addEventListener('load', autoScan);
 window.addEventListener('mouseup', wordSelected);
 
 function wordSelected() {
-  let selectedText = window
-    .getSelection()
-    .toString()
-    .trim();
+  let selectedText = window.getSelection().toString();
   if (selectedText.length > 0) {
     let message = {
       text: selectedText,
@@ -12,3 +10,20 @@ function wordSelected() {
     chrome.runtime.sendMessage(message);
   }
 }
+
+function autoScan() {
+  let message = {
+    text: getWholeWebPageText(),
+  };
+  chrome.runtime.sendMessage(message);
+}
+
+const getWholeWebPageText = function() {
+  let wholePageText = '';
+  document.querySelectorAll('*').forEach(value => {
+    if (value.textContent.length > 0 && value.textContent.length < 100) {
+      wholePageText += value.textContent;
+    }
+  });
+  return wholePageText;
+};

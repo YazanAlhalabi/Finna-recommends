@@ -1,42 +1,64 @@
 function setup() {
   noCanvas();
   let bgpage = chrome.extension.getBackgroundPage();
-  let word = bgpage.word.trim();
+  let text = bgpage.word;
 
-  const data = {
+  const POST_DATA_FOR_ANNIF = {
     project_id: 'yso-en',
-    text: word,
-    limit: 1,
+    text,
+    limit: 3,
   };
 
   $.ajax({
     url: 'http://api.annif.org/v1/projects/yso-en/analyze',
     method: 'POST',
-    data,
+    data: POST_DATA_FOR_ANNIF,
     success: finished,
   });
 
   function finished(response) {
     response.results.map(key => {
-      let encoded = encodeURI(key.label);
-      let url = `https://api.finna.fi/api/v1/search?lookfor=${encoded}&type=Subject&field[]=id&field[]=title&field[]=nonPresenterAuthors&filter[]=language%3Aeng&sort=relevance%2Cid%20asc&page=1&limit=3&prettyPrint=false&lng=en-gb`;
+      //Keyword from ANNIF API
+      const keyword = key.label;
 
-      url = url.replace(/\s+/g, '');
-      loadJSON(url, gotData);
+      // DATA for GET REQUEST to FINNA API
+      const GET_DATA_FOR_FINNA = {
+        lookfor: keyword,
+        type: 'Subject',
+        field: ['id', 'title', 'nonPresenterAuthors', 'images'],
+        filter: ['language: eng'],
+        sort: 'relevance,id asc',
+        limit: 3,
+        prettyPrint: false,
+        lng: 'en-gb',
+      };
 
-      function gotData(data) {
-        createP(data);
-      }
+      $.ajax({
+        type: 'GET',
+        url: 'https://api.finna.fi/api/v1/search',
+        data: GET_DATA_FOR_FINNA,
+        success: function(data) {
+          if (data.resultCount > 0) {
+            data.records.map(values => {
+              interface(values);
+            });
+          } else {
+            console.log('no results');
+          }
+        },
+      });
 
-      function createP(word) {
-        word.records.map(key => {
-          interface(key);
-        });
-      }
+      // To show the subject/keyword that is used for the search
+      const keywords = key.label;
+      const bookBased = document.querySelector('.parent p');
+      const subject = document.createElement('span');
+      subject.textContent = keywords;
+      bookBased.appendChild(subject);
     });
   }
 }
 
+// Printing to the UI
 function interface(key) {
   const authorLoop =
     key.nonPresenterAuthors.length > 0
@@ -48,6 +70,7 @@ function interface(key) {
   const parent = document.querySelector('.parent');
 
   const card = document.createElement('div');
+
   const link = document.createElement('a');
   link.href = `https://finna.fi/Record/${key.id}`;
   parent.appendChild(card);
@@ -56,9 +79,11 @@ function interface(key) {
 
   const book = document.createElement('div');
   card.appendChild(book);
+
   const icon = document.createElement('i');
   book.appendChild(icon);
   icon.setAttribute('class', 'fas fa-book');
+
   const title = document.createElement('h2');
   title.textContent = key.title;
   book.appendChild(title);

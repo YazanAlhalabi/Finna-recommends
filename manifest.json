@@ -1,6 +1,7 @@
 {
    "manifest_version": 2,
    "name": "Finna Recommends",
+   "description": "A chrome extension that improves accessibility of information for everyone. Get book recommendations based on your selected text with a single click.",
    "version": "1",
    "content_scripts": [
       {

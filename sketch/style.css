@@ -4,8 +4,15 @@ body {
   background: #f5f8fa;
   font-family: 'Open Sans', sans-serif;
 }
-.parent h1{
-color:rgba(114, 57, 129, 1);
+.parent h1 {
+  color: rgba(114, 57, 129, 1);
+}
+.parent p span {
+  color: #444;
+  border: 1px solid rgba(114, 57, 129, 1);
+  padding: 0.2rem 0.5rem;
+  margin-left: 10px;
+  border-radius: 7px;
 }
 .card {
   display: flex;
