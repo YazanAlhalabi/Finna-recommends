@@ -1,0 +1,19 @@
+{
+   "name": {
+      "message": "Finna Rekommenderar",
+      "description": "The Title of the app"
+   },
+   "description": {
+      "message": "Ett verktyg som förbättrar tillgängligheten av information till alla. Få bokrekommendationer baserat på din valda text med ett enda klick.",
+      "description": "The Description of the app"
+   },
+   "popUpLabel": {
+      "message": "Böckerna är baserade på:"
+   },
+   "visitButtonLabel": {
+      "message": "BESÖKA"
+   },
+   "AuthorLabel": {
+      "message": "Författare"
+   }
+}

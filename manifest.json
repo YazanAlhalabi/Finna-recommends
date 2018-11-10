@@ -1,8 +1,9 @@
 {
    "manifest_version": 2,
-   "name": "Finna Recommends",
-   "description": "A chrome extension that improves accessibility of information for everyone. Get book recommendations based on your selected text with a single click.",
+   "name": "__MSG_name__",
+   "description": "__MSG_description__",
    "version": "1",
+   "default_locale": "en",
    "content_scripts": [
       {
          "matches": [
@@ -21,6 +22,6 @@
    "browser_action": {
       "default_icon": "finna.png",
       "default_popup": "sketch/index.html",
-      "default_title": "Find Recommendations"
+      "default_title": "__MSG_name__"
    }
 }

@@ -4,6 +4,12 @@ body {
   background: #f5f8fa;
   font-family: 'Open Sans', sans-serif;
 }
+.title {
+  order: -1;
+}
+.subject {
+  align-self: flex-start;
+}
 .parent {
   display: flex;
   flex-direction: column;

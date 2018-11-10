@@ -1,0 +1,19 @@
+{
+   "name": {
+      "message": "Finna Recommends",
+      "description": "The Title of the app"
+   },
+   "description": {
+      "message": "A chrome extension that improves accessibility of information for everyone. Get book recommendations based on your selected text with a single click.",
+      "description": "The Description of the app"
+   },
+   "popUpLabel": {
+      "message": "The books are based on:"
+   },
+   "visitButtonLabel": {
+      "message": "VISIT"
+   },
+   "AuthorLabel": {
+      "message": "Author"
+   }
+}

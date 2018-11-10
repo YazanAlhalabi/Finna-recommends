@@ -5,7 +5,7 @@ function setup() {
   chrome.tabs.detectLanguage(function(lang) {
     const ISOlanguageCODE = lang;
 
-    const project_id = `yso-${ISOlanguageCODE}`;
+    const project_id = `yso-${ISOlanguageCODE}` || 'yso-en';
     const url = `http://api.annif.org/v1/projects/${project_id}/analyze`;
     const POST_DATA_FOR_ANNIF = {
       project_id,
@@ -22,6 +22,7 @@ function setup() {
 
     function finished(response) {
       const annifLabels = [];
+
       response.results.map(key => {
         //Keyword from ANNIF API
         const keyword = key.label;
@@ -34,7 +35,7 @@ function setup() {
         const GET_DATA_FOR_FINNA = {
           lookfor: keyword,
           type: 'Subject',
-          field: ['id', 'title', 'nonPresenterAuthors', 'images'],
+          field: ['id', 'title', 'nonPresenterAuthors'],
           filter: [`language: ${filter[ISOlanguageCODE]}`],
           sort: 'relevance,id asc',
           limit: 3,
@@ -47,9 +48,11 @@ function setup() {
           url: 'https://api.finna.fi/api/v1/search',
           data: GET_DATA_FOR_FINNA,
           success: function(data) {
-            data.records.map(values => {
-              interface(values);
-            });
+            if (data.resultCount > 0) {
+              data.records.map(values => {
+                interface(values);
+              });
+            }
           },
         });
 
@@ -62,6 +65,16 @@ function setup() {
         annifLabels.push(encodeURI(keyword));
       });
 
+      // Main header
+      const parent = document.querySelector('.parent');
+      const InternalizedText = {
+        popUpTitle: chrome.i18n.getMessage('name'),
+      };
+      const title = document.createElement('h1');
+      title.setAttribute('class', 'title');
+      title.textContent = InternalizedText.popUpTitle;
+      parent.appendChild(title);
+
       // Link for show more button that sends to Finna library with the same keywords are used from Annif
       const toFinna = `
     https://www.finna.fi/Search/Results?sort=relevance&bool0%5B%5D=OR&lookfor0%5B%5D=
@@ -72,7 +85,6 @@ function setup() {
     ${annifLabels[2]}
     &type0%5B%5D=Subject&join=AND&limit=20`;
 
-      const parent = document.querySelector('.parent');
       const showMore = document.createElement('a');
       showMore.setAttribute('class', 'show-more');
       showMore.href = toFinna.trim();
@@ -85,6 +97,10 @@ function setup() {
 
 // Printing to the UI
 function interface(key) {
+  const InternalizedText = {
+    visitButtonLabel: chrome.i18n.getMessage('visitButtonLabel'),
+    AuthorLabel: chrome.i18n.getMessage('AuthorLabel'),
+  };
   const authorLoop =
     key.nonPresenterAuthors.length > 0
       ? key.nonPresenterAuthors.map(key => {
@@ -114,7 +130,7 @@ function interface(key) {
   book.appendChild(title);
 
   const author = document.createElement('span');
-  author.textContent = `Author: ${authorLoop}`;
+  author.textContent = `${InternalizedText.AuthorLabel}: ${authorLoop}`;
   card.appendChild(author);
 
   const button = document.createElement('button');
@@ -122,6 +138,6 @@ function interface(key) {
   a.href = `https://finna.fi/Record/${key.id}`;
   a.target = '_blank';
   button.appendChild(a);
-  a.textContent = 'visit';
+  a.textContent = InternalizedText.visitButtonLabel;
   card.appendChild(button);
 }

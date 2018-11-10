@@ -1,0 +1,19 @@
+{
+   "name": {
+      "message": "Finna suosittaa",
+      "description": "The Title of the app"
+   },
+   "description": {
+      "message": "Työkalu, joka parantaa kaikkien tiedon saatavuutta. Hanki kirjasuosituksia valitun tekstin perusteella yhdellä klikkauksella.",
+      "description": "The Description of the app"
+   },
+   "popUpLabel": {
+      "message": "Kirjat perustuvat:"
+   },
+   "visitButtonLabel": {
+      "message": "KÄYDÄ"
+   },
+   "AuthorLabel": {
+      "message": "Kirjailija"
+   }
+}
