@@ -1,5 +1,10 @@
 window.addEventListener('load', autoScan);
 window.addEventListener('mouseup', wordSelected);
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.msg == "newTabisReadyToBeScanned"){
+      autoScan();
+    }
+  });
 
 function wordSelected() {
   let selectedText = window.getSelection().toString();
