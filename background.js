@@ -7,8 +7,7 @@ function receiver(request, sender, sendResponse) {
 }
 
 chrome.tabs.onActivated.addListener(function(activeInfo){
-	var currentTabId = activeInfo.tabId;
-	var currentWindowId = activeInfo.windowId;
+	const currentTabId = activeInfo.tabId;
 	chrome.tabs.sendMessage(currentTabId,{'msg':'newTabisReadyToBeScanned'});
 });
 
